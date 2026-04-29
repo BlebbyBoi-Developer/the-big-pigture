@@ -88,8 +88,8 @@ label_settings = SubResource("LabelSettings_at6rn")
 
 [node name="Label" type="Label" parent="." unique_id=1755511964]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 482.0
+offset_bottom = 78.0
 text = "Unfinished version of The Big Pigture
 Will continue dev after the game jam"
 label_settings = SubResource("LabelSettings_dihg0")
