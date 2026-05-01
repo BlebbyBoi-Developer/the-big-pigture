@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dsuw285k4mc7m"]
+
+[ext_resource type="Script" uid="uid://dyd6n7kaswsvo" path="res://projectile.gd" id="1_qxf0c"]
+[ext_resource type="Texture2D" uid="uid://clmsloinyi3ay" path="res://water.png" id="2_dgwo2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sxmqc"]
+radius = 25.019993
+
+[node name="projectile" type="CharacterBody2D" unique_id=322731661]
+position = Vector2(525, 324)
+script = ExtResource("1_qxf0c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2131133425]
+self_modulate = Color(0.19, 0.15200001, 0, 1)
+show_behind_parent = true
+scale = Vector2(0.05542858, 0.05542858)
+texture = ExtResource("2_dgwo2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1457169154]
+visible = false
+shape = SubResource("CircleShape2D_sxmqc")

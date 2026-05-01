@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dt4ksmdirdy1i" path="res://Pig_farm_Vampula_1.jpg" id="2_epypp"]
 [ext_resource type="Script" uid="uid://jkpq6pf8145j" path="res://tank.gd" id="3_0hol4"]
 [ext_resource type="Texture2D" uid="uid://bseat4oitfxxi" path="res://FLUDD_SMS.png" id="4_q6r6c"]
+[ext_resource type="Script" uid="uid://do0kmtxiw0a6o" path="res://progress_bar.gd" id="5_q6r6c"]
 
 [sub_resource type="GDScript" id="GDScript_0hol4"]
 script/source = "extends Node2D
@@ -61,3 +62,19 @@ scale = Vector2(585.99994, 250.99998)
 mesh = SubResource("BoxMesh_0e48y")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1246914149]
+
+[node name="Control" type="Control" parent="." unique_id=543820472]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 648.0
+
+[node name="ProgressBar" type="ProgressBar" parent="Control" unique_id=1780815825]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 24.0
+offset_right = 162.0
+offset_bottom = 168.0
+step = 1.0
+fill_mode = 3
+script = ExtResource("5_q6r6c")
