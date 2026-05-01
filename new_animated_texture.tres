@@ -1,0 +1,32 @@
+[gd_resource type="AnimatedTexture" format=3 uid="uid://ig7yd2rrt8x"]
+
+[ext_resource type="Texture2D" uid="uid://cia6g0hbglx4u" path="res://sprites/waterfill/fill1.png" id="1_ib3wg"]
+[ext_resource type="Texture2D" uid="uid://dn3v70r05ln7d" path="res://sprites/waterfill/fill2.png" id="2_dw3ni"]
+[ext_resource type="Texture2D" uid="uid://j4qcnauddiu1" path="res://sprites/waterfill/fill3.png" id="3_0hp2w"]
+[ext_resource type="Texture2D" uid="uid://iponh45vvd8j" path="res://sprites/waterfill/fill4.png" id="4_uj2gg"]
+[ext_resource type="Texture2D" uid="uid://cdvkh3efn3qn" path="res://sprites/waterfill/fill5.png" id="5_kwaek"]
+[ext_resource type="Texture2D" uid="uid://dnbbtbfuwpnmu" path="res://sprites/waterfill/fill6.png" id="6_bblfy"]
+[ext_resource type="Texture2D" uid="uid://my7pcdhssl76" path="res://sprites/waterfill/fill7.png" id="7_umefr"]
+[ext_resource type="Texture2D" uid="uid://y0qt5yg7so8p" path="res://sprites/waterfill/fill8.png" id="8_o28w6"]
+[ext_resource type="Texture2D" uid="uid://b5ktkg1cfqqif" path="res://sprites/waterfill/fill9.png" id="9_qfdeq"]
+
+[resource]
+frames = 9
+frame_0/texture = ExtResource("1_ib3wg")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("2_dw3ni")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("3_0hp2w")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("4_uj2gg")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("5_kwaek")
+frame_4/duration = 0.1
+frame_5/texture = ExtResource("6_bblfy")
+frame_5/duration = 0.1
+frame_6/texture = ExtResource("7_umefr")
+frame_6/duration = 0.1
+frame_7/texture = ExtResource("8_o28w6")
+frame_7/duration = 0.1
+frame_8/texture = ExtResource("9_qfdeq")
+frame_8/duration = 0.1

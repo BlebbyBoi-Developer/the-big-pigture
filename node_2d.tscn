@@ -3,12 +3,19 @@
 [ext_resource type="Script" uid="uid://ohkn0jtk56rp" path="res://character_body_2d.gd" id="1_0e48y"]
 [ext_resource type="Script" uid="uid://jkpq6pf8145j" path="res://tank.gd" id="3_0hol4"]
 [ext_resource type="Texture2D" uid="uid://b8mxuixkeddnu" path="res://sprites/pigspray.png" id="3_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://bhpu57cdnvvao" path="res://sprites/waterdroplet.png" id="3_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://bseat4oitfxxi" path="res://FLUDD_SMS.png" id="4_hqns4"]
 [ext_resource type="Texture2D" uid="uid://cfwh0tp4xottq" path="res://sprites/idlepig.png" id="4_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://wsp2ql2v7oyd" path="res://sprites/idlepigmudcannon.png" id="5_hqns4"]
 [ext_resource type="Script" uid="uid://do0kmtxiw0a6o" path="res://progress_bar.gd" id="5_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://c3ma11s8lafav" path="res://sprites/pigjump.png" id="6_x0ka3"]
 [ext_resource type="Texture2D" uid="uid://d0ib2hgxd3mvf" path="res://sprites/pigrun.png" id="7_0h7mo"]
 [ext_resource type="Texture2D" uid="uid://crmftnh2hxju0" path="res://sprites/pigwalk.png" id="8_nr8wp"]
+[ext_resource type="Texture2D" uid="uid://btl4dcq68iivg" path="res://sprites/watermeterbehind.png" id="11_nr8wp"]
+[ext_resource type="Texture2D" uid="uid://brubpe7rwsga" path="res://sprites/watermeter.png" id="12_d2bti"]
+[ext_resource type="Texture2D" uid="uid://ig7yd2rrt8x" path="res://new_animated_texture.tres" id="13_ta5nu"]
+[ext_resource type="Script" uid="uid://djd7253dpgo83" path="res://label.gd" id="15_d2bti"]
+[ext_resource type="FontFile" uid="uid://dbmsau3jp60gy" path="res://_pophappiness__super_mario_sunshine_text_font_by_wingedyoshi14_dbyoh1g.ttf" id="15_ta5nu"]
 
 [sub_resource type="GDScript" id="GDScript_4d7sh"]
 script/source = "extends Node2D
@@ -137,6 +144,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_flf07"]
+font = ExtResource("15_ta5nu")
+font_color = Color(1, 0, 0, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
 size = Vector2(586, 250)
 
@@ -157,6 +168,24 @@ shape = SubResource("CapsuleShape2D_4d7sh")
 [node name="Tank" type="Node2D" parent="Player" unique_id=158701319]
 script = ExtResource("3_0hol4")
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Player/Tank" unique_id=2140811269]
+rotation = -2.90914
+emitting = false
+amount = 40
+texture = ExtResource("3_ir8iy")
+lifetime = 0.7
+one_shot = true
+speed_scale = 2.0
+direction = Vector2(-2, 1)
+spread = 12.09
+gravity = Vector2(200, 100)
+initial_velocity_max = 200.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/Tank" unique_id=1483519907]
+scale = Vector2(0.034713045, 0.034713045)
+texture = ExtResource("4_hqns4")
+flip_h = true
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1836897315]
 position = Vector2(-2, 0)
 sprite_frames = SubResource("SpriteFrames_bjha6")
@@ -171,15 +200,27 @@ offset_top = 9.0
 offset_right = 1152.0
 offset_bottom = 657.0
 
-[node name="ProgressBar" type="ProgressBar" parent="Control" unique_id=1780815825]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control" unique_id=1751781124]
 layout_mode = 0
-offset_left = 123.0
-offset_top = 24.0
-offset_right = 162.0
-offset_bottom = 168.0
-step = 1.0
+offset_left = 286.0
+offset_top = 93.0
+offset_right = 326.0
+offset_bottom = 221.0
 fill_mode = 3
+texture_under = ExtResource("11_nr8wp")
+texture_over = ExtResource("12_d2bti")
+texture_progress = ExtResource("13_ta5nu")
 script = ExtResource("5_q6r6c")
+
+[node name="Label" type="Label" parent="Control" unique_id=283179765]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 144.0
+offset_right = 559.0
+offset_bottom = 167.0
+text = "if you see this, the code is broken"
+label_settings = SubResource("LabelSettings_flf07")
+script = ExtResource("15_d2bti")
 
 [node name="PlaceholderGround" type="StaticBody2D" parent="." unique_id=1800450264]
 

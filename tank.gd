@@ -2,8 +2,6 @@ extends Node2D
 var charged = false
 var charging = false
 var chargepercentage = 0
-@onready var World = get_tree().get_root().get_node("World")
-@onready var projectile = load("res://projectile.tscn")
 
 func _process(_delta):
 	if Input.is_action_pressed("spray"):
@@ -22,7 +20,7 @@ func _process(_delta):
 			chargepercentage = 0
 		charging = false
 		charged = false
-	elif chargepercentage == 100:
+	elif chargepercentage == 100 and Input.is_action_just_released("spray"):
 		blast()
 
 	print ("chargepercentage:", chargepercentage)
@@ -30,8 +28,6 @@ func _process(_delta):
 	print("charged: ", charged)
 
 func blast():
-		var instance = projectile.instantiate()
-#q		instance.dir = rotation
-#		instance.spawnPos = global_position
-#		instance.spawnRot = rotation
-		World.add_child.call_deferred(instance)
+	$CPUParticles2D.emitting = true
+	charged = false
+	chargepercentage = 0
