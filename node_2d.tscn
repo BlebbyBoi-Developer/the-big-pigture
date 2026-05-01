@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ohkn0jtk56rp" path="res://character_body_2d.gd" id="1_0e48y"]
 [ext_resource type="Texture2D" uid="uid://dt4ksmdirdy1i" path="res://Pig_farm_Vampula_1.jpg" id="2_epypp"]
+[ext_resource type="Script" uid="uid://jkpq6pf8145j" path="res://tank.gd" id="3_0hol4"]
+[ext_resource type="Texture2D" uid="uid://bseat4oitfxxi" path="res://FLUDD_SMS.png" id="4_q6r6c"]
 
 [sub_resource type="GDScript" id="GDScript_0hol4"]
 script/source = "extends Node2D
@@ -38,6 +40,15 @@ shape = SubResource("CircleShape2D_q6r6c")
 scale = Vector2(0.0062500006, 0.013456686)
 texture = ExtResource("2_epypp")
 
+[node name="Tank" type="Node2D" parent="Player" unique_id=158701319]
+script = ExtResource("3_0hol4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/Tank" unique_id=334914803]
+position = Vector2(-5, -5)
+scale = Vector2(0.049999807, 0.036984347)
+texture = ExtResource("4_q6r6c")
+flip_h = true
+
 [node name="PlaceholderGround" type="StaticBody2D" parent="." unique_id=1800450264]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceholderGround" unique_id=1140280286]
@@ -48,3 +59,5 @@ shape = SubResource("RectangleShape2D_0e48y")
 position = Vector2(585.99994, 455.99997)
 scale = Vector2(585.99994, 250.99998)
 mesh = SubResource("BoxMesh_0e48y")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1246914149]
