@@ -17,7 +17,7 @@
 [ext_resource type="Script" uid="uid://djd7253dpgo83" path="res://label.gd" id="15_d2bti"]
 [ext_resource type="FontFile" uid="uid://dbmsau3jp60gy" path="res://_pophappiness__super_mario_sunshine_text_font_by_wingedyoshi14_dbyoh1g.ttf" id="15_ta5nu"]
 
-[sub_resource type="GDScript" id="GDScript_4d7sh"]
+[sub_resource type="GDScript" id="GDScript_ta5nu"]
 script/source = "extends Node2D
 
 
@@ -144,17 +144,17 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="LabelSettings" id="LabelSettings_flf07"]
-font = ExtResource("15_ta5nu")
-font_color = Color(1, 0, 0, 1)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
 size = Vector2(586, 250)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0e48y"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_flf07"]
+font = ExtResource("15_ta5nu")
+font_color = Color(1, 0, 0, 1)
+
 [node name="World" type="Node2D" unique_id=262392655]
-script = SubResource("GDScript_4d7sh")
+script = SubResource("GDScript_ta5nu")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=120013041]
 position = Vector2(580, 281)
@@ -186,41 +186,26 @@ scale = Vector2(0.034713045, 0.034713045)
 texture = ExtResource("4_hqns4")
 flip_h = true
 
+[node name="Area2D" type="Area2D" parent="Player/Tank" unique_id=1224742049]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player/Tank/Area2D" unique_id=1417371817]
+position = Vector2(7.89361, 0)
+scale = Vector2(1.3001373, 1)
+polygon = PackedVector2Array(-6.840515, -5, 76.22766, -26, 81.611694, -3, 63.1521, 20, 0.85098267, 16)
+disabled = true
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1836897315]
 position = Vector2(-2, 0)
 sprite_frames = SubResource("SpriteFrames_bjha6")
 animation = &"Jump"
 autoplay = "Idle"
 
-[node name="Control" type="Control" parent="." unique_id=543820472]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -1.0
-offset_top = 9.0
-offset_right = 1152.0
-offset_bottom = 657.0
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Control" unique_id=1751781124]
-layout_mode = 0
-offset_left = 286.0
-offset_top = 93.0
-offset_right = 326.0
-offset_bottom = 221.0
-fill_mode = 3
-texture_under = ExtResource("11_nr8wp")
-texture_over = ExtResource("12_d2bti")
-texture_progress = ExtResource("13_ta5nu")
-script = ExtResource("5_q6r6c")
-
-[node name="Label" type="Label" parent="Control" unique_id=283179765]
-layout_mode = 0
-offset_left = 286.0
-offset_top = 144.0
-offset_right = 559.0
-offset_bottom = 167.0
-text = "if you see this, the code is broken"
-label_settings = SubResource("LabelSettings_flf07")
-script = ExtResource("15_d2bti")
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=171172248]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [node name="PlaceholderGround" type="StaticBody2D" parent="." unique_id=1800450264]
 
@@ -232,3 +217,34 @@ shape = SubResource("RectangleShape2D_0e48y")
 position = Vector2(585.99994, 455.99997)
 scale = Vector2(585.99994, 250.99998)
 mesh = SubResource("BoxMesh_0e48y")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=715451010]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=543820472]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -301.0
+offset_top = -99.0
+offset_right = 852.0
+offset_bottom = 549.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/Control" unique_id=1751781124]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 124.0
+offset_right = 368.0
+offset_bottom = 252.0
+fill_mode = 3
+texture_under = ExtResource("11_nr8wp")
+texture_over = ExtResource("12_d2bti")
+texture_progress = ExtResource("13_ta5nu")
+script = ExtResource("5_q6r6c")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/TextureProgressBar" unique_id=283179765]
+layout_mode = 0
+offset_top = 51.0
+offset_right = 273.0
+offset_bottom = 74.0
+text = "if you see this, the code is broken"
+label_settings = SubResource("LabelSettings_flf07")
+script = ExtResource("15_d2bti")
