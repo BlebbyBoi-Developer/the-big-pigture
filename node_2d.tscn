@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d0ib2hgxd3mvf" path="res://sprites/pigrun.png" id="7_0h7mo"]
 [ext_resource type="Texture2D" uid="uid://crmftnh2hxju0" path="res://sprites/pigwalk.png" id="8_nr8wp"]
 
-[sub_resource type="GDScript" id="GDScript_0hol4"]
+[sub_resource type="GDScript" id="GDScript_4d7sh"]
 script/source = "extends Node2D
 
 
@@ -48,7 +48,7 @@ region = Rect2(32, 0, 32, 32)
 atlas = ExtResource("6_x0ka3")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fs4d3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d7sh"]
 atlas = ExtResource("6_x0ka3")
 region = Rect2(96, 0, 32, 32)
 
@@ -108,7 +108,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_rjqkl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fs4d3")
+"texture": SubResource("AtlasTexture_4d7sh")
 }],
 "loop": true,
 "name": &"Jump",
@@ -143,7 +143,7 @@ size = Vector2(586, 250)
 [sub_resource type="BoxMesh" id="BoxMesh_0e48y"]
 
 [node name="World" type="Node2D" unique_id=262392655]
-script = SubResource("GDScript_0hol4")
+script = SubResource("GDScript_4d7sh")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=120013041]
 position = Vector2(580, 281)
@@ -160,32 +160,8 @@ script = ExtResource("3_0hol4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1836897315]
 position = Vector2(-2, 0)
 sprite_frames = SubResource("SpriteFrames_bjha6")
-animation = &"Walk"
+animation = &"Jump"
 autoplay = "Idle"
-frame = 1
-frame_progress = 0.08007222
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1806654671]
-position = Vector2(-580, -281)
-offset = Vector2(574.79, 320.935)
-zoom = Vector2(2, 2)
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1246914149]
-
-[node name="PlaceholderGround" type="StaticBody2D" parent="Sprite2D" unique_id=1800450264]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/PlaceholderGround" unique_id=1140280286]
-position = Vector2(585, 457)
-shape = SubResource("RectangleShape2D_0e48y")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Sprite2D/PlaceholderGround" unique_id=1710923611]
-position = Vector2(585.99994, 455.99997)
-scale = Vector2(585.99994, 250.99998)
-mesh = SubResource("BoxMesh_0e48y")
 
 [node name="Control" type="Control" parent="." unique_id=543820472]
 layout_mode = 3
@@ -204,3 +180,14 @@ offset_bottom = 168.0
 step = 1.0
 fill_mode = 3
 script = ExtResource("5_q6r6c")
+
+[node name="PlaceholderGround" type="StaticBody2D" parent="." unique_id=1800450264]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceholderGround" unique_id=1140280286]
+position = Vector2(585, 457)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="PlaceholderGround" unique_id=1710923611]
+position = Vector2(585.99994, 455.99997)
+scale = Vector2(585.99994, 250.99998)
+mesh = SubResource("BoxMesh_0e48y")
