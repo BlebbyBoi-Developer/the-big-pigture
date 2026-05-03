@@ -23,6 +23,14 @@ func _process(_delta):
 	elif chargepercentage == 100 and Input.is_action_just_released("spray"):
 		blast()
 
+	if Global.PlayerFacing == "right":
+		$CPUParticles2D.direction.x = -2
+		$CPUParticles2D.gravity.x = 200
+		
+	elif Global.PlayerFacing == "left":
+		$CPUParticles2D.direction.x = 2
+		$CPUParticles2D.gravity.x = -200
+
 	print ("chargepercentage:", chargepercentage)
 	print ("charging: ", charging)
 	print("charged: ", charged)

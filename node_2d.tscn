@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bick65ivxgnoj"]
 
 [ext_resource type="Script" uid="uid://ohkn0jtk56rp" path="res://character_body_2d.gd" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://dj3ugk3j3hnmh" path="res://node_2d.gd" id="1_flf07"]
 [ext_resource type="Script" uid="uid://jkpq6pf8145j" path="res://tank.gd" id="3_0hol4"]
 [ext_resource type="Texture2D" uid="uid://b8mxuixkeddnu" path="res://sprites/pigspray.png" id="3_4d7sh"]
 [ext_resource type="Texture2D" uid="uid://bhpu57cdnvvao" path="res://sprites/waterdroplet.png" id="3_ir8iy"]
@@ -16,20 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://ig7yd2rrt8x" path="res://new_animated_texture.tres" id="13_ta5nu"]
 [ext_resource type="Script" uid="uid://djd7253dpgo83" path="res://label.gd" id="15_d2bti"]
 [ext_resource type="FontFile" uid="uid://dbmsau3jp60gy" path="res://_pophappiness__super_mario_sunshine_text_font_by_wingedyoshi14_dbyoh1g.ttf" id="15_ta5nu"]
-
-[sub_resource type="GDScript" id="GDScript_ta5nu"]
-script/source = "extends Node2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4d7sh"]
 radius = 9.066223
@@ -154,7 +141,7 @@ font = ExtResource("15_ta5nu")
 font_color = Color(1, 0, 0, 1)
 
 [node name="World" type="Node2D" unique_id=262392655]
-script = SubResource("GDScript_ta5nu")
+script = ExtResource("1_flf07")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=120013041]
 position = Vector2(580, 281)
