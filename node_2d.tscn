@@ -5,10 +5,11 @@
 [ext_resource type="Script" uid="uid://jkpq6pf8145j" path="res://tank.gd" id="3_0hol4"]
 [ext_resource type="Texture2D" uid="uid://b8mxuixkeddnu" path="res://sprites/pigspray.png" id="3_4d7sh"]
 [ext_resource type="Texture2D" uid="uid://bhpu57cdnvvao" path="res://sprites/waterdroplet.png" id="3_ir8iy"]
-[ext_resource type="Texture2D" uid="uid://bseat4oitfxxi" path="res://FLUDD_SMS.png" id="4_hqns4"]
 [ext_resource type="Texture2D" uid="uid://cfwh0tp4xottq" path="res://sprites/idlepig.png" id="4_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://dky37g4b5snr8" path="res://sprites/tank.png" id="5_flf07"]
 [ext_resource type="Texture2D" uid="uid://wsp2ql2v7oyd" path="res://sprites/idlepigmudcannon.png" id="5_hqns4"]
 [ext_resource type="Script" uid="uid://do0kmtxiw0a6o" path="res://progress_bar.gd" id="5_q6r6c"]
+[ext_resource type="Script" uid="uid://dwwid4pmu4h01" path="res://fliptank.gd" id="6_k73cj"]
 [ext_resource type="Texture2D" uid="uid://c3ma11s8lafav" path="res://sprites/pigjump.png" id="6_x0ka3"]
 [ext_resource type="Texture2D" uid="uid://d0ib2hgxd3mvf" path="res://sprites/pigrun.png" id="7_0h7mo"]
 [ext_resource type="Texture2D" uid="uid://crmftnh2hxju0" path="res://sprites/pigwalk.png" id="8_nr8wp"]
@@ -117,7 +118,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Run",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -156,6 +157,7 @@ shape = SubResource("CapsuleShape2D_4d7sh")
 script = ExtResource("3_0hol4")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Player/Tank" unique_id=2140811269]
+position = Vector2(11, -3)
 rotation = -2.90914
 emitting = false
 amount = 40
@@ -169,9 +171,10 @@ gravity = Vector2(200, 100)
 initial_velocity_max = 200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Player/Tank" unique_id=1483519907]
-scale = Vector2(0.034713045, 0.034713045)
-texture = ExtResource("4_hqns4")
-flip_h = true
+position = Vector2(1.0000114, 1.1444092e-05)
+scale = Vector2(0.86110556, 0.86110556)
+texture = ExtResource("5_flf07")
+script = ExtResource("6_k73cj")
 
 [node name="Area2D" type="Area2D" parent="Player/Tank" unique_id=1224742049]
 
@@ -184,7 +187,7 @@ disabled = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=1836897315]
 position = Vector2(-2, 0)
 sprite_frames = SubResource("SpriteFrames_bjha6")
-animation = &"Jump"
+animation = &"Run"
 autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=171172248]
