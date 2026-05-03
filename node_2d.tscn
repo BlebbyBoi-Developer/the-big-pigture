@@ -18,6 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://ig7yd2rrt8x" path="res://new_animated_texture.tres" id="13_ta5nu"]
 [ext_resource type="Script" uid="uid://djd7253dpgo83" path="res://label.gd" id="15_d2bti"]
 [ext_resource type="FontFile" uid="uid://dbmsau3jp60gy" path="res://_pophappiness__super_mario_sunshine_text_font_by_wingedyoshi14_dbyoh1g.ttf" id="15_ta5nu"]
+[ext_resource type="Texture2D" uid="uid://bah6ekq8iyx0w" path="res://sprites/blocks/dirtcenter.png" id="19_ei405"]
+[ext_resource type="Texture2D" uid="uid://dfyxfdqm06atc" path="res://sprites/blocks/dirttop.png" id="20_e8dv2"]
+[ext_resource type="Texture2D" uid="uid://bqfnu8ow32uxw" path="res://sprites/blocks/dirttopleft.png" id="21_2nhjh"]
+[ext_resource type="Texture2D" uid="uid://uqnd5ny4q0j4" path="res://sprites/blocks/dirttopright.png" id="22_bjha6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4d7sh"]
 radius = 9.066223
@@ -141,6 +145,28 @@ size = Vector2(586, 250)
 font = ExtResource("15_ta5nu")
 font_color = Color(1, 0, 0, 1)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gt76g"]
+texture = ExtResource("19_ei405")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1fr6y"]
+texture = ExtResource("20_e8dv2")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2hxjc"]
+texture = ExtResource("21_2nhjh")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ebxd8"]
+texture = ExtResource("22_bjha6")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2u7jv"]
+sources/0 = SubResource("TileSetAtlasSource_gt76g")
+sources/1 = SubResource("TileSetAtlasSource_1fr6y")
+sources/2 = SubResource("TileSetAtlasSource_2hxjc")
+sources/3 = SubResource("TileSetAtlasSource_ebxd8")
+
 [node name="World" type="Node2D" unique_id=262392655]
 script = ExtResource("1_flf07")
 
@@ -238,3 +264,6 @@ offset_bottom = 74.0
 text = "if you see this, the code is broken"
 label_settings = SubResource("LabelSettings_flf07")
 script = ExtResource("15_d2bti")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1329627390]
+tile_set = SubResource("TileSet_2u7jv")
