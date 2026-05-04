@@ -12,6 +12,5 @@ func _process(_delta):
 
 
 
-
 	#DEBUG
 	print("playerfacing", PlayerFacing)
