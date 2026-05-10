@@ -8,6 +8,11 @@ func _process(_delta):
 	elif Input.is_action_pressed("ui_left"):
 		PlayerFacing = "left"
 
+func _die():
+	pass
+
+func _win():
+	pass
 
 
 
