@@ -18,3 +18,10 @@ texture = ExtResource("1_cmhrf")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1254762116]
 stream = ExtResource("2_d2nv2")
 autoplay = true
+
+[node name="Button" type="Button" parent="." unique_id=705728236]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 85.0
+offset_right = 279.0
+offset_bottom = 141.0
