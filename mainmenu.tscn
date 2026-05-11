@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b61nxnlvgfk64"]
+
+[ext_resource type="Texture2D" uid="uid://bh60pt4mnb088" path="res://sprites/pixel-art-illustration-farm-barn-pixelated-barn-farm-barn-background-landscape-pixelated-for-the-pixel-art-game-and-icon-for-website-and-video-game-old-school-retro-vector.jpg" id="1_cmhrf"]
+[ext_resource type="AudioStream" uid="uid://cbmjddtqp31ia" path="res://Peak.mp3" id="2_d2nv2"]
+
+[node name="Control" type="Control" unique_id=2047813596]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=796658588]
+position = Vector2(488, 298)
+texture = ExtResource("1_cmhrf")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1254762116]
+stream = ExtResource("2_d2nv2")
+autoplay = true

@@ -332,8 +332,8 @@ texture = ExtResource("24_0lcl8")
 
 [node name="Sky" type="Sprite2D" parent="Environment" unique_id=2093633378]
 z_index = -2
-position = Vector2(674.99994, 418)
-scale = Vector2(2.6322918, 1.1574074)
+position = Vector2(674.99994, 426)
+scale = Vector2(2.6322918, 1.1425927)
 texture = ExtResource("23_2g1yb")
 
 [node name="dialogue" type="Node" parent="." unique_id=1095776934]
