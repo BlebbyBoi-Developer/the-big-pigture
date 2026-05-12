@@ -11,8 +11,10 @@ config_version=5
 [application]
 
 config/name="The Big Pigture"
-run/main_scene="uid://bdo1cdqtq7bl5"
+run/main_scene="uid://b61nxnlvgfk64"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0.08235294, 0.1254902, 0.14509805, 1)
+boot_splash/image="uid://doa3p4llf3e6y"
 config/icon="res://icon.svg"
 
 [autoload]
