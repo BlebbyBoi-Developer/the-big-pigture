@@ -25,6 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://uqnd5ny4q0j4" path="res://sprites/blocks/dirttopright.png" id="22_lyibo"]
 [ext_resource type="Texture2D" uid="uid://4ffcbbv0tv0e" path="res://sprites/Untitled design.png" id="23_2g1yb"]
 [ext_resource type="Texture2D" uid="uid://brst35dxe6qe1" path="res://sprites/blocks/cloud.png" id="24_0lcl8"]
+[ext_resource type="Texture2D" uid="uid://41xu2q015sch" path="res://sprites/trophy.png" id="26_kp6ii"]
+[ext_resource type="Script" uid="uid://cvosw6lvbaw4x" path="res://goal.gd" id="27_nqrg8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4d7sh"]
 radius = 9.066223
@@ -180,6 +182,9 @@ font_color = Color(1, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3brtn"]
 size = Vector2(88, 119.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nqrg8"]
+radius = 8.062258
 
 [node name="World" type="Node2D" unique_id=262392655]
 script = ExtResource("1_e0n1a")
@@ -369,3 +374,16 @@ script = SubResource("GDScript_kp6ii")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dialogue/begin/textcheck" unique_id=2145936845]
 position = Vector2(345, 266)
 shape = SubResource("RectangleShape2D_3brtn")
+
+[node name="Goal" type="Node2D" parent="." unique_id=739870695]
+
+[node name="Trophy" type="Sprite2D" parent="Goal" unique_id=1937113680]
+position = Vector2(333, 642)
+texture = ExtResource("26_kp6ii")
+
+[node name="Area2D" type="Area2D" parent="Goal" unique_id=1097269181]
+script = ExtResource("27_nqrg8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal/Area2D" unique_id=535924066]
+position = Vector2(333, 643)
+shape = SubResource("CircleShape2D_nqrg8")
