@@ -21,6 +21,11 @@ config/icon="res://icon.svg"
 
 Global="*uid://2j2yyogoa6e8"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [input]
 
 ui_left={
