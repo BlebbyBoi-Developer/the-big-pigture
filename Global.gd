@@ -1,6 +1,7 @@
 extends Node2D
 
 var PlayerFacing = "right"
+@export var debug = false
 
 func _process(_delta):
 	if Input.is_action_pressed("ui_right"):
@@ -17,5 +18,5 @@ func _win():
 
 
 
-	#DEBUG
-	print("playerfacing", PlayerFacing)
+	if Global.debug == true:
+		print("playerfacing", PlayerFacing)

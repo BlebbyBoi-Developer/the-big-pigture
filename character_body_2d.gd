@@ -3,6 +3,7 @@ extends CharacterBody2D
 var SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 var RUN = 0
+@export var void_detection = true
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -43,7 +44,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		sprite.play("Idle")
 		
-
-	print ("X Vel", velocity.x)
-	print ("Dir", direction)
-	print ("SPRINT", RUN)
+	if Global.debug == true:
+		print ("X Vel", velocity.x)
+		print ("Dir", direction)
+		print ("SPRINT", RUN)
+	
+	if void_detection and position.y > 1000:
+		get_tree().reload_current_scene()

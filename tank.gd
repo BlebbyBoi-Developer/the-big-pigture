@@ -2,6 +2,7 @@ extends Node2D
 var charged = false
 var charging = false
 var chargepercentage = 0
+var is_blasting = false
 
 func _process(_delta):
 	if Input.is_action_pressed("spray"):
@@ -31,11 +32,17 @@ func _process(_delta):
 		$CPUParticles2D.direction.x = 2
 		$CPUParticles2D.gravity.x = -200
 
-	print ("chargepercentage:", chargepercentage)
-	print ("charging: ", charging)
-	print("charged: ", charged)
+	if Global.debug == true:
+		print ("chargepercentage:", chargepercentage)
+		print ("charging: ", charging)
+		print("charged: ", charged)
 
 func blast():
+	is_blasting = true
 	$CPUParticles2D.emitting = true
+	await get_tree().create_timer(1).timeout
+	$CPUParticles2D.emitting = false
 	charged = false
 	chargepercentage = 0
+	is_blasting = false
+	return true
