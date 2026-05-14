@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://dt4ksmdirdy1i" path="res://Pig_farm_Vampula_1.jpg" id="26_mpxk2"]
 [ext_resource type="AudioStream" uid="uid://qn5wluupps8g" path="res://yippee-tbh.mp3" id="27_sbj4n"]
 [ext_resource type="AudioStream" uid="uid://ddmmxlghdhdcb" path="res://winners_W9Cpenj.mp3" id="31_8wyk7"]
+[ext_resource type="AudioStream" uid="uid://cnqt8ce4v72df" path="res://Quirky Boss Loop.ogg" id="33_t1nk2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4d7sh"]
 radius = 8.9747925
@@ -429,3 +430,19 @@ texture = ExtResource("25_hg0l0")
 position = Vector2(1976, 1295)
 stream = ExtResource("26_jdfxr")
 autoplay = true
+max_distance = 1060.0
+attenuation = 0.7578577
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=1726365866]
+position = Vector2(3599, 2095)
+stream = ExtResource("33_t1nk2")
+autoplay = true
+max_distance = 2493.0
+attenuation = 0.7578577
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="." unique_id=1677404443]
+position = Vector2(3599, 2095)
+stream = ExtResource("33_t1nk2")
+autoplay = true
+max_distance = 2493.0
+attenuation = 0.7578577

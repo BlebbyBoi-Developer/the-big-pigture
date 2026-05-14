@@ -14,7 +14,6 @@ func take_hit():
 	flashing = true
 	$Biggloob.modulate = Color(1, 0, 0)
 	await get_tree().create_timer(0.1).timeout
-	$AudioStreamPlayer2D.playing = true
 	$Biggloob.modulate = Color(1, 1, 1)
 	flashing = false
 	
