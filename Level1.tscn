@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://brst35dxe6qe1" path="res://sprites/blocks/cloud.png" id="24_0lcl8"]
 [ext_resource type="Texture2D" uid="uid://41xu2q015sch" path="res://sprites/trophy.png" id="26_kp6ii"]
 [ext_resource type="Script" uid="uid://cvosw6lvbaw4x" path="res://goal.gd" id="27_nqrg8"]
+[ext_resource type="AudioStream" uid="uid://ce0ivvyf8bfin" path="res://Cinematic Masterpiece.mp3" id="28_3brtn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4d7sh"]
 radius = 9.066223
@@ -387,3 +388,8 @@ script = ExtResource("27_nqrg8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Goal/Area2D" unique_id=535924066]
 position = Vector2(333, 643)
 shape = SubResource("CircleShape2D_nqrg8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1697405261]
+stream = ExtResource("28_3brtn")
+autoplay = true
+max_distance = 4096.0

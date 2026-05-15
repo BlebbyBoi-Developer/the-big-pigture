@@ -32,7 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://dt4ksmdirdy1i" path="res://Pig_farm_Vampula_1.jpg" id="26_mpxk2"]
 [ext_resource type="AudioStream" uid="uid://qn5wluupps8g" path="res://yippee-tbh.mp3" id="27_sbj4n"]
 [ext_resource type="AudioStream" uid="uid://ddmmxlghdhdcb" path="res://winners_W9Cpenj.mp3" id="31_8wyk7"]
-[ext_resource type="AudioStream" uid="uid://cnqt8ce4v72df" path="res://Quirky Boss Loop.ogg" id="33_t1nk2"]
+[ext_resource type="AudioStream" uid="uid://bhf8bcoi5wgvx" path="res://quick boss song.mp3" id="34_tb5ci"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4d7sh"]
 radius = 8.9747925
@@ -336,7 +336,6 @@ scale = Vector2(0.61410105, 0.5561396)
 texture = ExtResource("26_mpxk2")
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/Sprite2D" unique_id=2003803827]
-visible = false
 offset_left = -1051.0698
 offset_top = -139.12872
 offset_right = 3.9301758
@@ -433,16 +432,9 @@ autoplay = true
 max_distance = 1060.0
 attenuation = 0.7578577
 
-[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=1726365866]
-position = Vector2(3599, 2095)
-stream = ExtResource("33_t1nk2")
-autoplay = true
-max_distance = 2493.0
-attenuation = 0.7578577
-
 [node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="." unique_id=1677404443]
-position = Vector2(3599, 2095)
-stream = ExtResource("33_t1nk2")
+position = Vector2(3647, 2095)
+stream = ExtResource("34_tb5ci")
 autoplay = true
-max_distance = 2493.0
+max_distance = 978.0
 attenuation = 0.7578577
