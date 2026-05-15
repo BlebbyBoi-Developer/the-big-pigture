@@ -26,6 +26,10 @@ Global="*uid://2j2yyogoa6e8"
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/project_statistics/plugin.cfg")
+
 [input]
 
 ui_left={
