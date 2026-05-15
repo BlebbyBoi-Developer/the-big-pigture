@@ -1,0 +1,60 @@
+extends CharacterBody2D
+
+var SPEED = 150.0
+const JUMP_VELOCITY = -400.0
+var RUN = 0
+@export var void_detection = true
+var bear_velocity = Vector2()
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+
+func _physics_process(delta: float) -> void:
+	# Add gravity
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Sprint
+	if Input.is_action_pressed("run"):
+		sprite.play("Run")
+		SPEED = 300
+	elif not Input.is_action_pressed("run"):
+		sprite.play("Walk")
+		SPEED = 150
+
+	# Jump
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Movement
+	var direction := Input.get_axis("ui_left", "ui_right")
+	if direction and is_on_floor():
+		velocity.x = direction * SPEED
+		sprite.flip_h = direction < 0
+
+
+	elif !is_on_floor():
+		bear_velocity.x = SPEED
+
+
+		# Flip sprite depending on direction
+		sprite.flip_h = direction < 0
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+
+	move_and_slide()
+
+	# --- ANIMATIONS ---
+	if not is_on_floor():
+		sprite.play("Jump")
+	elif direction != 0:
+		sprite.play("Walk")
+	else:
+		sprite.play("Idle")
+		
+	if Global.debug == true:
+		print ("X Vel", velocity.x)
+		print ("Dir", direction)
+		print ("SPRINT", RUN)
+	
+	if void_detection and position.y > 1000:
+		get_tree().reload_current_scene()
